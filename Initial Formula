@@ -1,0 +1,1 @@
+=IF(C414="","",IF(J414=0,"",IF(MONTH(J414)='Month Select'!$C$9,"Month & Quarter","Quarter")))
