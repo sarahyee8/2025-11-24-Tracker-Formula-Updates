@@ -22,3 +22,15 @@ MAP(A2:A7,
     )
 )
 )
+
+=VSTACK(
+MAP(A2:A7,
+    LAMBDA(s,
+        LET(
+            rng, INDIRECT("'" & s & "'!Q9:W36"),
+            rows, FILTER(rng, BYROW(rng, LAMBDA(r, COUNTA(r)>0)), NA()),
+            IFERROR(DROP(rows,0), "")
+        )
+    )
+)
+)
