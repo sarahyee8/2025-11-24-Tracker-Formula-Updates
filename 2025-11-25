@@ -5,3 +5,20 @@ FILTER(INDIRECT("'"&A4&"'!"&B2),(INDIRECT("'"&A4&"'!"&B3)="commit")+(INDIRECT("'
 FILTER(INDIRECT("'"&A5&"'!"&B2),(INDIRECT("'"&A5&"'!"&B3)="commit")+(INDIRECT("'"&A5&"'!"&B3)="Upside"),""),
 FILTER(INDIRECT("'"&A6&"'!"&B2),(INDIRECT("'"&A6&"'!"&B3)="commit")+(INDIRECT("'"&A6&"'!"&B3)="Upside"),""),
 FILTER(INDIRECT("'"&A7&"'!"&B2),(INDIRECT("'"&A7&"'!"&B3)="commit")+(INDIRECT("'"&A7&"'!"&B3)="Upside"),""))
+
+
+
+
+
+
+
+=VSTACK(
+MAP(A2:A7,
+    LAMBDA(s,
+        LET(
+            rng, INDIRECT("'" & s & "'!Q9:W36"),
+            FILTER(rng, BYROW(rng, LAMBDA(r, COUNTA(r)>0)), "")
+        )
+    )
+)
+)
