@@ -81,3 +81,17 @@ HSTACK(B5 & TEXT(SEQUENCE(ROWS(INDIRECT("'"&A5&"'!Q9:W36")),1,0,0),""),INDIRECT(
 HSTACK(B6 & TEXT(SEQUENCE(ROWS(INDIRECT("'"&A6&"'!Q9:W36")),1,0,0),""),INDIRECT("'"&A6&"'!Q9:W36")),
 HSTACK(B7 & TEXT(SEQUENCE(ROWS(INDIRECT("'"&A7&"'!Q9:W36")),1,0,0),""),INDIRECT("'"&A7&"'!Q9:W36"))
 )
+
+
+
+
+
+
+=VSTACK(
+LET(d, INDIRECT("'" & A2 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B2), d )),
+LET(d, INDIRECT("'" & A3 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B3), d )),
+LET(d, INDIRECT("'" & A4 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B4), d )),
+LET(d, INDIRECT("'" & A5 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B5), d )),
+LET(d, INDIRECT("'" & A6 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B6), d )),
+LET(d, INDIRECT("'" & A7 & "'!Q9:W36"),HSTACK( IF(ROW(INDEX(d,,1))>=0, B7), d ))
+)
