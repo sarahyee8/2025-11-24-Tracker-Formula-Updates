@@ -44,3 +44,14 @@ IFERROR(FILTER(INDIRECT("'"&A4&"'!Q9:W36"),INDEX(INDIRECT("'"&A4&"'!Q9:W36"),,,5
 IFERROR(FILTER(INDIRECT("'"&A5&"'!Q9:W36"),INDEX(INDIRECT("'"&A5&"'!Q9:W36"),,,5)<>""), ""),
 IFERROR(FILTER(INDIRECT("'"&A6&"'!Q9:W36"),INDEX(INDIRECT("'"&A6&"'!Q9:W36"),,,5)<>""), ""),
 IFERROR(FILTER(INDIRECT("'"&A7&"'!Q9:W36"),INDEX(INDIRECT("'"&A7&"'!Q9:W36"),,,5)<>""), ""))
+
+
+
+=VSTACK(
+LET(rng,INDIRECT("'"&A2&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng)))),
+LET(rng,INDIRECT("'"&A3&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng)))),
+LET(rng,INDIRECT("'"&A4&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng)))),
+LET(rng,INDIRECT("'"&A5&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng)))),
+LET(rng,INDIRECT("'"&A6&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng)))),
+LET(rng,INDIRECT("'"&A7&"'!Q9:W36"),IFERROR(FILTER(rng,INDEX(rng,,5)<>""), DROP(rng,ROWS(rng))))
+)
